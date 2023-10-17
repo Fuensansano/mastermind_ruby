@@ -26,4 +26,8 @@ describe Mastermind do
   it 'should return [2,0] when guesser guest the combination with two colors red and blue' do
     expect(mastermind.evaluate(%w[red blue], %w[red blue])).to eq([2, 0])
   end
+
+  it 'should return [0,1] when guesser guest the combination with two colors red and blue' do
+    expect(mastermind.evaluate(%w[red yellow], %w[blue red])).to eq([0, 1])
+  end
 end
