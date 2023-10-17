@@ -2,9 +2,15 @@
 
 class Mastermind
   def evaluate(win_combination, guess_combination)
-    return [0,1] if win_combination[0] == 'red' && win_combination[1] == 'green'
-    return [0,1] if win_combination[0] == 'red' && win_combination[1] == 'yellow'
     return [win_combination.length, 0] if win_combination == guess_combination
-    [0,0]
+
+    count_right_color_and_right_position = win_combination.zip(guess_combination).count { |win_element, guess_element| win_element == guess_element }
+
+    set_win_combination = Set.new(win_combination)
+    set_guess_combination = Set.new(guess_combination)
+
+    count_right_color_distinct_position = (set_win_combination & set_guess_combination).count
+
+    [count_right_color_and_right_position,count_right_color_distinct_position]
   end
 end
