@@ -2,9 +2,7 @@
 
 class Mastermind
   def evaluate(win_combination, guess_combination)
-    return [0,0] if win_combination[0] == 'green'
-    return [0,0] if win_combination[0] == 'red'
-    return [0,0] if win_combination[0] == 'yellow'
+    return [0,0] if win_combination[0] != guess_combination[0]
     [1,0]
   end
 end
