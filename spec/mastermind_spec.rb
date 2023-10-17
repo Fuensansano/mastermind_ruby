@@ -14,4 +14,8 @@ describe Mastermind do
   it 'should return [0,0] when guesser fails to guess the combination with yellow' do
     expect(mastermind.evaluate(['yellow'],['red'])).to eq([0,0])
   end
+
+  it 'should return [0,0] when guesser fails to guess the combination with green' do
+    expect(mastermind.evaluate(['green'],['red'])).to eq([0,0])
+  end
 end
